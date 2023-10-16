@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "有道速读插件",
+  "version": "1.0.0",
+  "description": "识别页面中的pdf文件，一键跳转有道速读并上传打开",
+  "permissions": ["activeTab"],
+  "action": {
+    "default_icon": {
+      "48": "icon.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "48": "icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["youdao_icon.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
